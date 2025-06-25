@@ -1,5 +1,11 @@
+import ExpenseTracker from "./components/ExpenseTracker";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <ExpenseTracker />
+    </div>
+  );
 };
 
 export default App;
