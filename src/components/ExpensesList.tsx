@@ -5,8 +5,9 @@ const ExpensesList = ({ item }: { item: Expense }) => {
   const { removeExpense } = useStore();
   return (
     <li className="flex justify-between items-center bg-blue-50 p-4 rounded-lg shadow-sm">
-      <span>
-        {item.description}: ${item.amount.toFixed(2)}
+      <span className="max-w-[300px] text-justify">
+        {item.description}:{" "}
+        <span className="font-bold">${item.amount.toFixed(2)}</span>
       </span>
       <button
         onClick={() => removeExpense(item.id)}

@@ -27,8 +27,14 @@ const ExpenseTracker = () => {
           Expense Tracker
         </h1>
         {/* Add expense */}
-        <div className="space-y-4 mb-6">
-          {/* description */}
+        {/* description */}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleExpense();
+          }}
+          className="space-y-4 mb-6"
+        >
           <input
             onChange={(e) => setDescription(e.target.value)}
             value={description}
@@ -48,14 +54,14 @@ const ExpenseTracker = () => {
           />
           {/* add button */}
           <button
-            onClick={handleExpense}
+            type="submit"
             className="bg-blue-500 text-white w-full px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            Add expense
+            Add Expense
           </button>
-        </div>
+        </form>
         {/* List of expenses */}
-        <ul className="space-y-4 mb-6">
+        <ul className="space-y-4 mb-6 ">
           {expenses.map((item) => (
             <ExpensesList key={item.id} item={item} />
           ))}
